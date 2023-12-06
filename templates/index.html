@@ -5,9 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-<form>
+<form method="post">
   <label>name</label>
-  {{ form.name() }}
+    {{ form.name() }}
+    {{ form.submit() }}
 </form>
 </body>
 </html>
