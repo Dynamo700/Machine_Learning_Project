@@ -6,8 +6,18 @@
 </head>
 <body>
 <form method="post">
-  <label>name</label>
-    {{ form.name() }}
+    <label>horsepower</label>
+    {{ form.horsepower() }}
+    <br>
+    <label>weight</label>
+    {{ form.weight() }}
+    <br>
+    <label>cylinders</label>
+    {{ form.cylinders() }}
+    <br>
+    <label>modelYear</label>
+    {{ form.modelyear() }}
+
     {{ form.submit() }}
 </form>
 </body>
