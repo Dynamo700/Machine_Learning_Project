@@ -9,8 +9,8 @@ from form import MpgForm, DiaForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY']='WtVxifd"zZKpMvBv:&Oc1D-Eh9H23GN'
-lm_model = load('mpg_model.joblib')
-logr_model = load('diabetes_model.joblib')
+lm_model = load('mpg_model.sav')
+logr_model = load('diabetes_model.sav')
 
 
 @app.route("/")
@@ -23,15 +23,20 @@ def formPageMpg():
 
     if(request.method == "POST" and nameForm1.is_submitted()):
         print("submitted")
-        hp = nameForm1.horsepower.data
-        cy = nameForm1.cylinders.data
-        wt = nameForm1.weight.data
-        my = nameForm1.modelyear.data
+        hp = int (nameForm1.horsepower.data)
+        cy = int (nameForm1.cylinders.data)
+        wt = int(nameForm1.weight.data)
+        my = int(nameForm1.modelyear.data)
         print(hp)
         print(cy)
         print(wt)
         print(my)
         print(lm_model)
+
+        another_dict = {'cylinders': cy, 'horsepower': hp, 'weight': wt, 'age': 2023 - my, 'origin_japan': 0, 'origin_usa': 0}
+        ex_df = pd.DataFrame(another_dict, index=[0])
+        my_mpg = lm_model.predict(ex_df)
+        print(my_mpg)
 
 
 
@@ -55,7 +60,7 @@ def formPageDia():
 
 
 
-    return render_template("index.html", form=nameForm2)
+    return render_template("diabetes.html", form=nameForm2)
 
 
 if __name__ == '__main__':

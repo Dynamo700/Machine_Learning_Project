@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes</title>
+</head>
+<body>
+<form method="post">
+    <label>age</label>
+    {{ form.age() }}
+    <br>
+    <label>bmi</label>
+    {{ form.bmi() }}
+    <br>
+    <label>glucose</label>
+    {{ form.glucose() }}
+    <br>
+
+    {{ form.submit() }}
+</form>
+</body>
+</html>
