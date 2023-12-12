@@ -7,16 +7,27 @@
 <body>
 <form method="post">
     <label>age</label>
-    {{ form.age() }}
+    {{ form.Age() }}
     <br>
-    <label>bmi</label>
-    {{ form.bmi() }}
+    <label>BMI</label>
+    {{ form.BMI() }}
     <br>
     <label>glucose</label>
-    {{ form.glucose() }}
+    {{ form.Glucose() }}
     <br>
-
+    <label>bloodpressure</label>
+    {{ form.BloodPressure() }}
+    <br>
+    <label>diabetespedigreefunction</label>
+    {{ form.DiabetesPedigreeFunction() }}
+    <br>
+    <label>Pregnancies</label>
+    {{ form.Pregnancies() }}
+    <br>
     {{ form.submit() }}
 </form>
+<h1>
+    {{ pred }}
+</h1>
 </body>
 </html>

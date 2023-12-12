@@ -21,6 +21,8 @@ def hello_world():
 def formPageMpg():
     nameForm1 = MpgForm()
 
+    my_mpg = " "
+
     if(request.method == "POST" and nameForm1.is_submitted()):
         print("submitted")
         hp = int (nameForm1.horsepower.data)
@@ -35,12 +37,12 @@ def formPageMpg():
 
         another_dict = {'cylinders': cy, 'horsepower': hp, 'weight': wt, 'age': 2023 - my, 'origin_japan': 0, 'origin_usa': 0}
         ex_df = pd.DataFrame(another_dict, index=[0])
-        my_mpg = lm_model.predict(ex_df)
+        my_mpg = lm_model.predict(ex_df)[0]
         print(my_mpg)
 
 
 
-    return render_template("index.html", form=nameForm1)
+    return render_template("index.html", pred=my_mpg, form=nameForm1)
 
 
 
@@ -48,19 +50,32 @@ def formPageMpg():
 def formPageDia():
     nameForm2 = DiaForm()
 
+    my_diabetes = " "
+
     if(request.method == "POST" and nameForm2.is_submitted()):
         print("submitted")
-        ag = nameForm2.age.data
-        bm = nameForm2.bmi.data
-        gl = nameForm2.glucose.data
+        ag = nameForm2.Age.data
+        bm = nameForm2.BMI.data
+        gl = nameForm2.Glucose.data
+        bp = nameForm2.BloodPressure.data
+        dp = nameForm2.DiabetesPedigreeFunction.data
+        pr = nameForm2.Pregnancies.data
         print(ag)
         print(bm)
         print(gl)
+        print(bp)
+        print(dp)
+        print(pr)
         print(logr_model)
 
+        another_dict = {'Pregnancies': pr, 'Glucose': gl, 'BloodPressure': bp, 'BMI': bm, 'DiabetesPedigreeFunction': dp, 'Age': ag,}
+        ex_df = pd.DataFrame(another_dict, index=[0])
+        my_diabetes = logr_model.predict(ex_df)[0]
+        print(my_diabetes)
 
 
-    return render_template("diabetes.html", form=nameForm2)
+
+    return render_template("diabetes.html", pred=my_diabetes, form=nameForm2)
 
 
 if __name__ == '__main__':
