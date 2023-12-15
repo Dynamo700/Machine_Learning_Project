@@ -15,7 +15,7 @@ logr_model = load('diabetes_model.sav')
 
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World!</p>"
+    return render_template("home.html")
 
 @app.route("/mpg", methods=['GET', 'POST'])
 def formPageMpg():
