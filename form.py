@@ -9,7 +9,7 @@ from sklearn.linear_model import LinearRegression
 class MpgForm(FlaskForm):
     horsepower = DecimalField("Horsepower", validators=[DataRequired()])
     cylinders = IntegerField("Cylinders", validators=[DataRequired()])
-    weight = FloatField("Weight", validators=[DataRequired()])
+    weight = IntegerField("Weight", validators=[DataRequired()])
     modelyear = IntegerField("ModelYear", validators=[DataRequired()])
     origin_usa = IntegerField("Origin_usa", validators=[DataRequired()])
     origin_japan = IntegerField("Origin_japan", validators=[DataRequired()])
@@ -18,9 +18,9 @@ class MpgForm(FlaskForm):
 
 class DiaForm(FlaskForm):
     Age = IntegerField("age", validators=[DataRequired()])
-    BMI = FloatField("bmi", validators=[DataRequired()])
+    BMI = IntegerField("bmi", validators=[DataRequired()])
     Glucose = IntegerField("glucose", validators=[DataRequired()])
-    BloodPressure = FloatField("bloodpressure", validators=[DataRequired()])
+    BloodPressure = IntegerField("bloodpressure", validators=[DataRequired()])
     DiabetesPedigreeFunction = IntegerField("diabetespedigreefunction", validators=[DataRequired()])
     Pregnancies = IntegerField("Pregnancies", validators=[DataRequired()])
     submit = SubmitField("Submit")

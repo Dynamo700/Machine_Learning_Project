@@ -44,7 +44,7 @@ def formPageMpg():
         another_dict = {'cylinders': cy, 'horsepower': hp, 'weight': wt, 'age': 2023 - my, 'origin_japan': 0, 'origin_usa': 0, 'origin_europe': 0}
         ex_df = pd.DataFrame(another_dict, index=[0])
         my_mpg = lm_model.predict(ex_df)[0]
-        print(my_mpg) 
+        print(my_mpg)
 
 
 
