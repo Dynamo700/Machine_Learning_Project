@@ -38,11 +38,22 @@
     <br>
     <label>modelYear</label>
     {{ form.modelyear() }}
+    <label>car from japan</label>
+    {{ form.origin_japan() }}
+    <label>car from usa</label>
+    {{ form.origin_usa() }}
+    <label>car from europe</label>
+    {{ form.origin_europe() }}
+
 
     {{ form.submit() }}
 </form>
 <h1>
    {{ pred }}
 </h1>
+<h3>
+   Please fill out all of the above boxes with the information required.
+   Note: for the country your car is from, please put the number 1 in the designated box, and put all others as 0.
+</h3>
 </body>
 </html>

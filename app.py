@@ -25,20 +25,26 @@ def formPageMpg():
 
     if(request.method == "POST" and nameForm1.is_submitted()):
         print("submitted")
-        hp = int (nameForm1.horsepower.data)
-        cy = int (nameForm1.cylinders.data)
+        hp = int(nameForm1.horsepower.data)
+        cy = int(nameForm1.cylinders.data)
         wt = int(nameForm1.weight.data)
         my = int(nameForm1.modelyear.data)
+        oj = int(nameForm1.origin_japan.data)
+        ou = int(nameForm1.origin_usa.data)
+        oe = int(nameForm1.origin_europe.data)
         print(hp)
         print(cy)
         print(wt)
         print(my)
+        print(oj)
+        print(ou)
+        print(oe)
         print(lm_model)
 
-        another_dict = {'cylinders': cy, 'horsepower': hp, 'weight': wt, 'age': 2023 - my, 'origin_japan': 0, 'origin_usa': 0}
+        another_dict = {'cylinders': cy, 'horsepower': hp, 'weight': wt, 'age': 2023 - my, 'origin_japan': 0, 'origin_usa': 0, 'origin_europe': 0}
         ex_df = pd.DataFrame(another_dict, index=[0])
         my_mpg = lm_model.predict(ex_df)[0]
-        print(my_mpg)
+        print(my_mpg) 
 
 
 
