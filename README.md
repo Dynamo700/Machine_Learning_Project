@@ -5,7 +5,7 @@ diabetes based on factors such as glucose and BMI.
 
 
 -To run the app, you must first open your ide. In a command prompt terminal you 
-must first clone the repository than,
+must first clone the repository then,
 activate the environment using the following command:
 .venv\Scripts\activate . Once the environment has been 
 activated, you will then run the app by inputting the following command: 
