@@ -12,4 +12,4 @@ activated, you will then run the app by inputting the following command:
 flask --app app run .Once the application is loaded, you then must press the 
 link that it provides in the terminal in order to view the application. Once 
 you click the link, you will be greeted by the home page. From there, you
-can then begin to make your predictions!
+can then try it out!
